@@ -29,22 +29,25 @@
     ];
 
     // Some and Every Checks
-    let atLeastOne19;
     // Array.prototype.some() // is at least one person 19 or older?
-    console.log(atLeastOne19);
+    const atLeastOne19 = people.some(({year}) => 2023 - year >= 19)
 
-    let allOfEmTho;
     // Array.prototype.every() // is everyone 19 or older?
-    console.log(allOfEmTho);
+    const allOfEmTho = people.every(({year}) => 2023 - year >= 19)
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // log the comment with the ID of 823423
+    const comment = comments.find(({id}) => id === 823423)
 
     // Array.prototype.findIndex()
     // log the index of the comment with this ID
+    const ind = comments.findIndex(({id}) => id === 823423)
 
-    // make (and then log) a new array that has all of the same elements as comments, except without the comment with the index you determined above. (you can do this with filter, so feel free to throw that in here, but if you do, also) take advantage of the spread operator for this
+    // make (and then log) a new array that has all of the same elements as comments,
+    // except without the comment with the index you determined above.
+    // (you can do this with filter, so feel free to throw that in here, but if you do, also) take advantage of the spread operator for this
+    const newComments = [...comments.filter(comment => comment.id !== 2039842)];
 
   </script>
 </body>
